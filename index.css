@@ -1,7 +1,7 @@
 /* :root {
 
 } */
- 
+
 body {
     margin: 0;
     background-color: #ffffff;
@@ -11,11 +11,11 @@ body {
 /* Header styling */
 header {
     display: flex;
-    background-image: url("burger.jpg");
+    background-image: url("/burger.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 12rem;
+    height: 15vh;
     align-items: center;
     padding-left: 10vw;
     color: #ffffff;
@@ -33,7 +33,60 @@ header h2 {
     1px 1px 0 #000;
 }
 
-hgroup {
+.header hgroup {
     margin: 0;
     line-height: 1.3rem;
+}
+
+/* Menu area */
+
+.menu {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item {
+    border-bottom: solid 2px #3c3c3c;
+    display: flex;
+    flex-direction: row;
+    padding: 1vh 0;
+    width: 80vw;
+    align-items: center;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+}
+
+.emoji-div {
+    font-size: 7rem;
+    transform: translateX(-10px) translateY(-10px);
+}
+
+.ingredients {
+    color: #8B8B8B;
+    font-weight: 100;
+}
+
+.btn-container {
+    margin-left: auto;
+}
+
+.add-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid #dedede;
+    background-color: inherit;
+    font-size: 1.5rem;
+}
+
+.add-btn:hover {
+    box-shadow: 1px 1px black;
+}
+
+.add-btn:active {
+    box-shadow: inset 1px 1px black;
 }
