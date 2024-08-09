@@ -2,10 +2,12 @@ import { menuArray } from "./data.js"
 
 const menuArea = document.getElementById('menu')
 // const orderArea = document.getElementById('order-area')
+const addBtn = document.getElementsByClassName('add-btn')
 
-
-
-
+document.body.addEventListener('click', function(e){
+    console.log(e.id)
+})
+// Retrieve menu
 function getMenu() {
     let menu = ''
     menuArray.forEach(item => {
@@ -22,7 +24,7 @@ function getMenu() {
                 </div>
 
             <div class="btn-container">
-                <button class="add-btn" id="">+</button>
+                <button class="add-btn" id="${item.id}">+</button>
             </div>
         </li>
         `
@@ -30,6 +32,7 @@ function getMenu() {
     return menu
 }
 
+// Render menu
 function renderMenu() {
     menuArea.innerHTML = getMenu()
 }
