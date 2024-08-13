@@ -8,7 +8,7 @@ body {
     font-family: 'smythe', serif;
 } 
 
-/* Header styling */
+/* Header Styling */
 header {
     display: flex;
     background-image: url("/burger.jpg");
@@ -38,7 +38,7 @@ header h2 {
     line-height: 1.3rem;
 }
 
-/* Menu area */
+/* Menu Area */
 
 .menu {
     display: flex;
@@ -61,7 +61,7 @@ header h2 {
 }
 
 .emoji-div {
-    font-size: 7rem;
+    font-size: 6rem;
     transform: translateX(-10px) translateY(-10px);
 }
 
@@ -89,4 +89,50 @@ header h2 {
 
 .add-btn:active {
     box-shadow: inset 1px 1px black;
+}
+
+/* Order Area */
+
+
+.order-area .order-heading{
+    text-align: center;
+    padding-top: 15px;
+    /* display: none; */
+}
+
+.visible {
+    display: block;
+}
+
+.current-order {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(9vw);
+    list-style: none;
+    justify-content: center;
+    
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    h3 {
+        padding-right: 20px;
+        font-size: 2rem
+    }
+    p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: .75rem;
+        color:#8B8B8B}
+
+    p:hover{
+            text-decoration: underline red;
+            cursor: pointer;
+        }
+}
+
+.order-item .item-price {
+    margin-left: auto;
 }
