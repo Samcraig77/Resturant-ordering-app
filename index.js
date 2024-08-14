@@ -3,49 +3,54 @@ import { menuArray } from "./data.js"
 const menuArea = document.getElementById('menu')
 const orderArea = document.getElementById('current-order')
 
-const currentOrderArray = []
+let currentOrderArray = []
 
 document.addEventListener('click', function(e){
-        if(e.target.dataset.add){
-        addMenuItem(e.target.dataset.add)
-        renderOrder()
-        } else if (e.target.dataset.remove){
-            removeItem(e.target.dataset.remove)
-            renderOrder()
+    if(e.target.dataset.add){
+            getMenuItem(e.target.dataset.add)
             
-        }
-        
+    } else if (e.target.dataset.remove){
+            removeItem(e.target.dataset.remove)
+            }
 
-    
+    renderOrder()
+    orderHeadingDisplayToggle()
 })
+
+function orderHeadingDisplayToggle() {
+    currentOrderArray.length > 0 ? document.getElementById('order-heading').classList.remove('hidden') :
+    currentOrderArray.length === 0 ? document.getElementById('order-heading').classList.add('hidden') : ''
+}
 
 // Take order array and display it
 function renderOrder(){
-    // orderArea.style.display('none')
-    // getOrder() === '' ? document.getElementById('order-heading').style.display = 'block' : 'none'
-    
     orderArea.innerHTML = getOrder()
 }
 
+// Create object of menu item
+function addMenuItem(item){
+    item.uuid = crypto.randomUUID()
+    currentOrderArray.unshift(item)
+}
 
-// Add item from menu to order
-function addMenuItem(itemId) {
 
-    menuArray.filter(item => {
-    return item.id === itemId})
-
-    currentOrderArray.push(menuArray[Number(itemId)])
+// Add object from menu to order
+function getMenuItem(itemId) {
+    const selectedItem = menuArray[Number(itemId)]
+    addMenuItem({selectedItem})
+    console.log(currentOrderArray)
 }
 
 // Set the order elements 
 function getOrder(){
     let order = ''
+
     currentOrderArray.forEach(item =>{
         order += `
         <li class="order-item">
-        <h3>${item.name}</h3>
-        <p data-remove="${item.id}">remove</p>
-        <h3 class="item-price">$${item.price}</h3>
+            <h3>${item.selectedItem.name}</h3>
+            <p class="remove-btn" data-remove="${item.uuid}">remove</p>
+            <h3 class="item-price">$${item.selectedItem.price}</h3>
         </li>
         `
     })
@@ -56,10 +61,13 @@ function getOrder(){
 
 // Remove item from order 
 
-function removeItem(itemId) {
-   currentOrderArray.splice(currentOrderArray, 1)
+function removeItem(itemUUID) {
+    const updatedOrderArray = currentOrderArray.filter(item => {
+    return item.uuid !== itemUUID}
+   )
+    currentOrderArray = updatedOrderArray   
 
-    console.log(itemId)
+   console.log(itemUUID)
 }
 
 // Retrieve menu
@@ -92,11 +100,3 @@ function renderMenu() {
 }
 
 renderMenu()
-
-// function handleLikeClick(tweetId){
-    
-//     const targetTweetObj = tweetsData.filter(function(tweet){
-//         return tweet.uuid === tweetId
-//     })[0]
-//     targetTweetObj.likes++
-//     console.log(tweetsData)
