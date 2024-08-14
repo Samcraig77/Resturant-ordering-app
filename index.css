@@ -100,16 +100,16 @@ header h2 {
     /* display: none; */
 }
 
-.visible {
-    display: block;
+.hidden {
+   display: none;
 }
 
 .current-order {
     display: flex;
     flex-direction: column;
-    transform: translateX(9vw);
+    align-items: center;
     list-style: none;
-    justify-content: center;
+    
     
 }
 
