@@ -2,15 +2,16 @@ import { menuArray } from "./data.js"
 
 const menuArea = document.getElementById('menu')
 const orderArea = document.getElementById('current-order')
+const orderHeading = document.getElementById('order-heading')
 
 let currentOrderArray = []
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.add){
-            getMenuItem(e.target.dataset.add)
+         getMenuItem(e.target.dataset.add)
             
     } else if (e.target.dataset.remove){
-            removeItem(e.target.dataset.remove)
+        removeItem(e.target.dataset.remove)
             }
 
     renderOrder()
@@ -18,27 +19,13 @@ document.addEventListener('click', function(e){
 })
 
 function orderHeadingDisplayToggle() {
-    currentOrderArray.length > 0 ? document.getElementById('order-heading').classList.remove('hidden') :
-    currentOrderArray.length === 0 ? document.getElementById('order-heading').classList.add('hidden') : ''
+    currentOrderArray.length > 0 ? orderHeading.classList.remove('hidden') :
+    currentOrderArray.length === 0 ? orderHeading.classList.add('hidden') : ''
 }
 
 // Take order array and display it
 function renderOrder(){
     orderArea.innerHTML = getOrder()
-}
-
-// Create object of menu item
-function addMenuItem(item){
-    item.uuid = crypto.randomUUID()
-    currentOrderArray.unshift(item)
-}
-
-
-// Add object from menu to order
-function getMenuItem(itemId) {
-    const selectedItem = menuArray[Number(itemId)]
-    addMenuItem({selectedItem})
-    console.log(currentOrderArray)
 }
 
 // Set the order elements 
@@ -54,20 +41,31 @@ function getOrder(){
         </li>
         `
     })
-    // console.log(order)
-    return order
+    
+return order
     
 }
 
-// Remove item from order 
+// Create object of menu item
+function addMenuItem(item){
+    item.uuid = crypto.randomUUID()
+    currentOrderArray.unshift(item)
+}
 
+// Add object from menu to order
+function getMenuItem(itemId) {
+    const selectedItem = menuArray[Number(itemId)]
+    addMenuItem({selectedItem})
+}
+
+
+// Remove item from order 
 function removeItem(itemUUID) {
     const updatedOrderArray = currentOrderArray.filter(item => {
     return item.uuid !== itemUUID}
    )
-    currentOrderArray = updatedOrderArray   
 
-   console.log(itemUUID)
+    currentOrderArray = updatedOrderArray
 }
 
 // Retrieve menu
@@ -94,7 +92,8 @@ function getMenu() {
     })
     return menu
 }
-// Render menu
+
+// Render menu items
 function renderMenu() {
     menuArea.innerHTML = getMenu()
 }
