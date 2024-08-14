@@ -11,9 +11,10 @@ body {
 /* Header Styling */
 header {
     display: flex;
-    background-image: url("/burger.jpg");
+    background-image: url("./burger.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: static;
+    background-position-y: 72%;
     background-repeat: no-repeat;
     height: 15vh;
     align-items: center;
@@ -44,24 +45,23 @@ header h2 {
     display: flex;
     list-style: none;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 }
 
 .menu-item {
-    border-bottom: solid 2px #3c3c3c;
+    border-bottom: solid 2px #d2d2d2;
     display: flex;
     flex-direction: row;
-    padding: 1vh 0;
     width: 80vw;
     align-items: center;
 }
 
 .menu-item h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .emoji-div {
-    font-size: 6rem;
+    font-size: 5rem;
     transform: translateX(-10px) translateY(-10px);
 }
 
@@ -93,11 +93,9 @@ header h2 {
 
 /* Order Area */
 
-
 .order-area .order-heading{
     text-align: center;
     padding-top: 15px;
-    /* display: none; */
 }
 
 .hidden {
@@ -109,8 +107,6 @@ header h2 {
     flex-direction: column;
     align-items: center;
     list-style: none;
-    
-    
 }
 
 .order-item {
@@ -118,6 +114,7 @@ header h2 {
     align-items: center;
     justify-content: center;
     width: 80vw;
+    height: 5vh;
     h3 {
         padding-right: 20px;
         font-size: 2rem

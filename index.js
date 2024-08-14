@@ -1,8 +1,8 @@
 import { menuArray } from "./data.js"
 
 const menuArea = document.getElementById('menu')
-const orderArea = document.getElementById('current-order')
-const orderHeading = document.getElementById('order-heading')
+const orderArea = document.getElementById('order-area')
+const orderItems = document.getElementById('current-order')
 
 let currentOrderArray = []
 
@@ -11,21 +11,21 @@ document.addEventListener('click', function(e){
          getMenuItem(e.target.dataset.add)
             
     } else if (e.target.dataset.remove){
-        removeItem(e.target.dataset.remove)
+        currentOrderArray = removeItem(e.target.dataset.remove)
             }
 
     renderOrder()
-    orderHeadingDisplayToggle()
+    orderDisplayToggle()
 })
 
-function orderHeadingDisplayToggle() {
-    currentOrderArray.length > 0 ? orderHeading.classList.remove('hidden') :
-    currentOrderArray.length === 0 ? orderHeading.classList.add('hidden') : ''
+function orderDisplayToggle() {
+    currentOrderArray.length > 0 ? orderArea.classList.remove('hidden') :
+    currentOrderArray.length === 0 ? orderArea.classList.add('hidden') : ''
 }
 
 // Take order array and display it
 function renderOrder(){
-    orderArea.innerHTML = getOrder()
+    orderItems.innerHTML = getOrder()
 }
 
 // Set the order elements 
@@ -42,11 +42,10 @@ function getOrder(){
         `
     })
     
-return order
-    
+    return order
 }
 
-// Create object of menu item
+// Create object of selected menu item with uuid
 function addMenuItem(item){
     item.uuid = crypto.randomUUID()
     currentOrderArray.unshift(item)
@@ -65,7 +64,7 @@ function removeItem(itemUUID) {
     return item.uuid !== itemUUID}
    )
 
-    currentOrderArray = updatedOrderArray
+    return updatedOrderArray
 }
 
 // Retrieve menu
