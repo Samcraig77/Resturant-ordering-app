@@ -13,7 +13,7 @@ header {
     display: flex;
     background-image: url("./burger.jpg");
     background-size: cover;
-    background-position: static;
+    background-position: absolute;
     background-position-y: 72%;
     background-repeat: no-repeat;
     height: 15vh;
@@ -23,11 +23,11 @@ header {
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 header h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-shadow: -1px -1px 0 #000, 
     1px -1px 0 #000,
     -1px 1px 0 #000, 
@@ -46,22 +46,20 @@ header h2 {
     list-style: none;
     flex-direction: column;
     align-items: center; 
+    width: 80vw;
+    margin: auto;
 }
 
 .menu-item {
     border-bottom: solid 2px #d2d2d2;
     display: flex;
-    flex-direction: row;
-    width: 80vw;
+    width: 100%;
     align-items: center;
 }
 
-.menu-item h3 {
-    font-size: 1rem;
-}
 
 .emoji-div {
-    font-size: 5rem;
+    font-size: 6rem;
     transform: translateX(-10px) translateY(-10px);
 }
 
@@ -85,6 +83,7 @@ header h2 {
 
 .add-btn:hover {
     box-shadow: 1px 1px black;
+    cursor: pointer;
 }
 
 .add-btn:active {
@@ -92,6 +91,11 @@ header h2 {
 }
 
 /* Order Area */
+
+.order-area{
+    width: 80vw;
+    margin: auto
+}
 
 .order-area .order-heading{
     text-align: center;
@@ -107,6 +111,8 @@ header h2 {
     flex-direction: column;
     align-items: center;
     list-style: none;
+    
+    margin: auto
 }
 
 .order-item {
@@ -115,21 +121,62 @@ header h2 {
     justify-content: center;
     width: 80vw;
     height: 5vh;
+
     h3 {
-        padding-right: 20px;
+        padding-right: 1vw;
         font-size: 2rem
     }
-    p {
+
+    button {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: .75rem;
-        color:#8B8B8B}
+        color:#8B8B8B;
+        border: none;
+        background-color: #ffffff;
+    }
 
-    p:hover{
+    button:hover{
             text-decoration: underline red;
             cursor: pointer;
-        }
+    }
+    
+    .item-price {
+        margin-left: auto;
+    }
+
 }
 
-.order-item .item-price {
-    margin-left: auto;
+
+/* Order Total Styling */
+
+.order-total-area {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-top: 2px solid black;
+    transform: translateX(2vw);
+    h3{
+        font-size: 2rem;
+        margin-left: auto;
+    }
+}
+
+.complete-order-btn {
+    height: 5svh;
+    width: 80vw;
+    border-radius: 5px;
+    border: none;
+    background-color: #16db99;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: auto auto 2vh 2vw;
+
+}
+
+.complete-order-btn:hover {
+    color: #16db99;
+    background-color: #ffffff;
+    border: 2px solid #16db99;
+    cursor: pointer;
 }
