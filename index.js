@@ -3,6 +3,7 @@ import { menuArray } from "./data.js"
 const menuArea = document.getElementById('menu')
 const orderArea = document.getElementById('order-area')
 const orderItems = document.getElementById('current-order')
+const orderTotalArea = document.getElementById('order-total-area')
 
 let currentOrderArray = []
 
@@ -13,9 +14,10 @@ document.addEventListener('click', function(e){
     } else if (e.target.dataset.remove){
         currentOrderArray = removeItem(e.target.dataset.remove)
             }
-
+    console.log(getOrderTotal())
     renderOrder()
     orderDisplayToggle()
+    renderCheckoutArea()
 })
 
 function orderDisplayToggle() {
@@ -36,7 +38,7 @@ function getOrder(){
         order += `
         <li class="order-item">
             <h3>${item.selectedItem.name}</h3>
-            <p class="remove-btn" data-remove="${item.uuid}">remove</p>
+            <button class="remove-btn" data-remove="${item.uuid}">remove</button>
             <h3 class="item-price">$${item.selectedItem.price}</h3>
         </li>
         `
@@ -67,6 +69,23 @@ function removeItem(itemUUID) {
     return updatedOrderArray
 }
 
+// Get cash total
+function getOrderTotal() {
+   const total = currentOrderArray.reduce((total, menuItem) =>
+    total + menuItem.selectedItem.price, 0
+    )
+    const tax = .08
+    return (total + (total * tax)).toFixed(2)
+}
+
+function renderCheckoutArea(){
+    orderTotalArea.innerHTML = `
+                    <h2>Total Price + Tax:</h2>
+                    <h3 class="align-right">$${getOrderTotal()}</h3>
+                
+    `
+}
+
 // Retrieve menu
 function getMenu() {
     let menu = ''
@@ -79,7 +98,7 @@ function getMenu() {
                     <hgroup>
                         <h3 class="item-name"> ${item.name} </h3>
                         <p class="ingredients"> ${item.ingredients.join(', ')} </p>
-                        <h3> $${item.price} </h3>
+                        <h3> $${item.price}</h3>
                     </hgroup>
                 </div>
 
