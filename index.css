@@ -1,14 +1,10 @@
-/* :root {
-
-} */
-
 body {
     margin: 0;
     background-color: #ffffff;
-    font-family: 'smythe', serif;
+    font-family: 'smythe', sans-serif;
 } 
 
-/* Header Styling */
+/* Header  */
 header {
     display: flex;
     background-image: url("./burger.jpg");
@@ -45,7 +41,7 @@ header h2 {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    margin: auto 4vw auto auto;
+    margin: auto 40px auto auto;
 }
 
 .menu-item {
@@ -123,7 +119,7 @@ header h2 {
     font-size: 2rem;
 
     .item-description {
-        margin-left: -2vw;
+        margin-left: -20px;
         
     }
 
@@ -150,7 +146,7 @@ header h2 {
 }
 
 
-/* Order Total Styling */
+/* Order Total Area */
 
 .order-total-area {
     display: flex;
@@ -159,7 +155,7 @@ header h2 {
     padding: 0;
     border-top: 2px solid black;
     .align-right{
-        font-size: 2rem;
+        font-size: 2.25rem;
         margin-left: auto;
     }
 }
@@ -182,4 +178,22 @@ header h2 {
     background-color: #ffffff;
     border: 2px solid #16db99;
     cursor: pointer;
+}
+
+/* Payment Modal */
+
+.payment-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    width: 90vw;
+    height: 45vh;
+    background-color: #ffffff;
+    box-shadow: 30px 5px 500px 1px;
+    z-index: 1;
+    font-family: sans-serif;
 }
