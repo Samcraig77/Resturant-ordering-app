@@ -69,7 +69,7 @@ function removeItem(itemUUID) {
 // Get cash total
 function getOrderTotal() {
    const total = currentOrderArray.reduce((total, menuItem) =>
-    total + menuItem.selectedItem.price, 0
+    total + Number(menuItem.selectedItem.price), 0
     )
 
     const tax = .08
