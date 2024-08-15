@@ -4,17 +4,14 @@ const menuArea = document.getElementById('menu')
 const orderArea = document.getElementById('order-area')
 const orderItems = document.getElementById('current-order')
 const orderTotalArea = document.getElementById('order-total-area')
+const confirmBtn = document.getElementById('complete-order-btn')
 
 let currentOrderArray = []
 
 document.addEventListener('click', function(e){
-    if(e.target.dataset.add){
-         getMenuItem(e.target.dataset.add)
-            
-    } else if (e.target.dataset.remove){
-        currentOrderArray = removeItem(e.target.dataset.remove)
-            }
-    console.log(getOrderTotal())
+    e.target.dataset.add ? getMenuItem(e.target.dataset.add) :
+    e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
+    e.target === confirmBtn ? console.log(getOrderTotal()) : ''
     renderOrder()
     orderDisplayToggle()
     renderCheckoutArea()
@@ -74,6 +71,7 @@ function getOrderTotal() {
    const total = currentOrderArray.reduce((total, menuItem) =>
     total + menuItem.selectedItem.price, 0
     )
+
     const tax = .08
     return (total + (total * tax)).toFixed(2)
 }
