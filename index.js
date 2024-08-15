@@ -11,7 +11,7 @@ let currentOrderArray = []
 document.addEventListener('click', function(e){
     e.target.dataset.add ? getMenuItem(e.target.dataset.add) :
     e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
-    e.target === confirmBtn ? console.log(getOrderTotal()) : ''
+    e.target === confirmBtn ? console.log(Number(getOrderTotal())) : ''
     renderOrder()
     orderDisplayToggle()
     renderCheckoutArea()
@@ -34,7 +34,7 @@ function getOrder(){
     currentOrderArray.forEach(item =>{
         order += `
         <li class="order-item">
-            <h3>${item.selectedItem.name}</h3>
+            <h3 class="item-description">${item.selectedItem.name}</h3>
             <button class="remove-btn" data-remove="${item.uuid}">remove</button>
             <h3 class="item-price">$${item.selectedItem.price}</h3>
         </li>
@@ -78,7 +78,7 @@ function getOrderTotal() {
 
 function renderCheckoutArea(){
     orderTotalArea.innerHTML = `
-                    <h2>Total Price + Tax:</h2>
+                    <h2 class="order-total">Total Price + Tax:</h2>
                     <h3 class="align-right">$${getOrderTotal()}</h3>
                 
     `
@@ -96,7 +96,7 @@ function getMenu() {
                     <hgroup>
                         <h3 class="item-name"> ${item.name} </h3>
                         <p class="ingredients"> ${item.ingredients.join(', ')} </p>
-                        <h3> $${item.price}</h3>
+                        <h3> $${item.price} + Tax</h3>
                     </hgroup>
                 </div>
 
