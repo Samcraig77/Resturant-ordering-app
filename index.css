@@ -53,7 +53,6 @@ header h2 {
     display: flex;
     width: 80vw;
     align-items: center;
-
 }
 
 
@@ -93,7 +92,8 @@ header h2 {
 
 .order-area{
     width: 80vw;
-    margin: auto
+    margin: auto;
+    padding: 0;
 }
 
 .order-area .order-heading{
@@ -110,7 +110,6 @@ header h2 {
     flex-direction: column;
     align-items: center;
     list-style: none;
-    
     margin: auto
 }
 
@@ -121,11 +120,17 @@ header h2 {
     width: 80vw;
     height: 5vh;
     margin-bottom: 1vh;
+    font-size: 2rem;
 
-    h3 {
-        padding-right: 1vw;
-        font-size: 2rem
+    .item-description {
+        margin-left: -2vw;
+        
     }
+
+    .item-price {
+            margin-left: auto;
+            transform: translateX(-20px);
+        }
 
     button {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -133,6 +138,7 @@ header h2 {
         color:#8B8B8B;
         border: none;
         background-color: #ffffff;
+        margin-left: 1vw;
     }
 
     button:hover{
@@ -140,10 +146,7 @@ header h2 {
             cursor: pointer;
     }
     
-    .item-price {
-        margin-left: auto;
-    }
-
+    
 }
 
 
@@ -153,18 +156,16 @@ header h2 {
     display: flex;
     align-items: center;
     margin: auto;
+    padding: 0;
     border-top: 2px solid black;
-    transform: translateX(20px);
-    h3{
+    .align-right{
         font-size: 2rem;
         margin-left: auto;
-        /* transform: translateX(-1vw); */
-        padding-right: 1vw;
     }
 }
 
 .complete-order-btn {
-    height: 5svh;
+    height: 5vh;
     width: 80vw;
     border-radius: 5px;
     border: none;
@@ -172,7 +173,7 @@ header h2 {
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
-    margin: auto auto 2vh 2vw;
+
 
 }
 
