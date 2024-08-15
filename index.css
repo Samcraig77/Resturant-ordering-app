@@ -43,18 +43,17 @@ header h2 {
 
 .menu {
     display: flex;
-    list-style: none;
     flex-direction: column;
     align-items: center; 
-    width: 80vw;
-    margin: auto;
+    margin: auto 4vw auto auto;
 }
 
 .menu-item {
     border-bottom: solid 2px #d2d2d2;
     display: flex;
-    width: 100%;
+    width: 80vw;
     align-items: center;
+
 }
 
 
@@ -121,6 +120,7 @@ header h2 {
     justify-content: center;
     width: 80vw;
     height: 5vh;
+    margin-bottom: 1vh;
 
     h3 {
         padding-right: 1vw;
@@ -154,10 +154,12 @@ header h2 {
     align-items: center;
     margin: auto;
     border-top: 2px solid black;
-    transform: translateX(2vw);
+    transform: translateX(20px);
     h3{
         font-size: 2rem;
         margin-left: auto;
+        /* transform: translateX(-1vw); */
+        padding-right: 1vw;
     }
 }
 
