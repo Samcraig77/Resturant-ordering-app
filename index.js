@@ -22,6 +22,10 @@ function orderDisplayToggle() {
     currentOrderArray.length === 0 ? orderArea.classList.add('hidden') : ''
 }
 
+function modalDisplayToggle(){
+    
+}
+
 // Take order array and display it
 function renderOrder(){
     orderItems.innerHTML = getOrder()
@@ -69,18 +73,16 @@ function removeItem(itemUUID) {
 // Get cash total
 function getOrderTotal() {
    const total = currentOrderArray.reduce((total, menuItem) =>
-    total + Number(menuItem.selectedItem.price), 0
-    )
-
+    total + Number(menuItem.selectedItem.price), 0)
     const tax = .08
     return (total + (total * tax)).toFixed(2)
 }
 
+// Render order total
 function renderCheckoutArea(){
     orderTotalArea.innerHTML = `
-                    <h2 class="order-total">Total Price + Tax:</h2>
-                    <h3 class="align-right">$${getOrderTotal()}</h3>
-                
+        <h2 class="order-total">Total Price + Tax:</h2>
+        <h3 class="align-right">$${getOrderTotal()}</h3>
     `
 }
 
