@@ -11,14 +11,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Smythe&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div>
+
         <header class="header">
+
             <hgroup>
                 <h1>Jimmy's Diner</h1>
                 <h2>The best burgers and pizzas in town.</h2>
             </hgroup>
         </header>
         <main>
+
             <section>
                 <ul class="menu" id="menu" aria-label="menu items">
                     <!-- Menu Items render here -->
@@ -39,12 +41,43 @@
                 
             </section>
         </main>
+
             <!-- <div class="payment-modal" id="payment-modal">
                 <h2>Enter card details</h2>
+                <div class="customer-details">
+                    <div class="customer-entry">
+                        <label for="customer-name">Name</label>
+                        <input class="input" id="customer-name" placeholder="John Doe"/>
+                    </div>
+
+                    <div class="customer-entry">
+                        <label for="card-number">Card Number</label>
+                        <input 
+                        class="input" 
+                        id="card-number" 
+                        placeholder="XXXX-XXXX-XXXX-XXXX"/>
+                    </div>
+
+                    <div class="customer-entry">
+                        <label for="ccv-number">
+                            CCV </label>
+                        <input 
+                            class="input" 
+                            type="number" 
+                            min="0" 
+                            max="999" 
+                            maxlength="3" 
+                            class="customer-entry" 
+                            id="ccv-number" 
+                            placeholder="123"/>
+                    </div>
+
+                    <button class="pay-btn" id="pay-btn">Pay</button>
+                </div>
             </div> -->
         
         <footer class="footer" id="footer"></footer>
-    </div>
+
         <script type="module" src="/index.js"></script>
     </body>
     
