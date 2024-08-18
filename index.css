@@ -5,7 +5,7 @@ body {
 } 
 
 /* Header  */
-header {
+.header {
     display: flex;
     background-image: url("./burger.jpg");
     background-size: 100%;
@@ -16,26 +16,26 @@ header {
     padding: 2rem;
     margin: auto;
     color: #ffffff;
-}
-
-header h1 {
+    
+    h1 {
     font-size: 3rem;
-}
+    }
 
-header h1, header h2 {
+    h1, h2 {
     padding-left: 10vw;
-}
+    }
 
-header h2 {
-    font-size: 1.75rem;
-    text-shadow: 1px -1px 2px #000, 
-    1px -1px 2px #000,
-    -1px 1px 2px #000, 
-    1px 1px 2px #000;
-}
+    h2 {
+        font-size: 1.75rem;
+        text-shadow: 1px -1px 2px #000, 
+        1px -1px 2px #000,
+        -1px 1px 2px #000, 
+        1px 1px 2px #000;
+    }
 
-.header hgroup {
-    line-height: 1.3rem;
+    hgroup {
+        line-height: 1.3rem;
+    }
 }
 
 /* Menu Area */
