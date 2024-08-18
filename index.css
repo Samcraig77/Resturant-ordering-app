@@ -8,18 +8,22 @@ body {
 header {
     display: flex;
     background-image: url("./burger.jpg");
-    background-size: cover;
+    background-size: 100%;
     background-position: absolute;
     background-position-y: 72%;
     background-repeat: no-repeat;
     align-items: center;
-    padding-left: 10vw;
+    padding: 2rem;
     margin: auto;
     color: #ffffff;
 }
 
 header h1 {
     font-size: 3rem;
+}
+
+header h1, header h2 {
+    padding-left: 10vw;
 }
 
 header h2 {
@@ -168,7 +172,7 @@ header h2 {
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
-
+    margin: 15px auto;
 
 }
 
@@ -193,6 +197,38 @@ header h2 {
     height: 45vh;
     background-color: #ffffff;
     box-shadow: 30px 5px 500px 1px;
+    border-radius: 10px;
     z-index: 1;
     font-family: sans-serif;
+
+    .customer-entry{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80vw;
+        height: 8vh;
+        max-width: 400px;
+        /* align-items: center; */
+        justify-content: center;
+        margin: 10px auto;
+
+    }
+} 
+
+.input {
+        height: 50px;
+        font-size: large;
+        padding-left: 20px;
+        margin: 10px;
+}
+
+.pay-btn {
+    width: 75vw;
+    max-width: 380px;
+    height: 50px;
+    color: #ffffff;
+    background-color: #16db99;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5vh;
 }
