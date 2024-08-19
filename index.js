@@ -5,25 +5,27 @@ const orderArea = document.getElementById('order-area')
 const orderItems = document.getElementById('current-order')
 const orderTotalArea = document.getElementById('order-total-area')
 const confirmBtn = document.getElementById('complete-order-btn')
+const paymentModalWrapper = document.getElementById('modal-wrapper')
 
 let currentOrderArray = []
 
 document.addEventListener('click', function(e){
     e.target.dataset.add ? getMenuItem(e.target.dataset.add) :
     e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
-    e.target === confirmBtn ? console.log(Number(getOrderTotal())) : ''
+    e.target === confirmBtn ? modalActivate() : 
+    e.target=== paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') :''
     renderOrder()
     orderDisplayToggle()
     renderCheckoutArea()
 })
 
 function orderDisplayToggle() {
-    currentOrderArray.length > 0 ? orderArea.classList.remove('hidden') :
+    currentOrderArray.length ? orderArea.classList.remove('hidden') :
     currentOrderArray.length === 0 ? orderArea.classList.add('hidden') : ''
 }
 
-function modalDisplayToggle(){
-    
+function modalActivate(){
+    paymentModalWrapper.classList.remove('hidden') 
 }
 
 // Take order array and display it
