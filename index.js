@@ -13,7 +13,7 @@ document.addEventListener('click', function(e){
     e.target.dataset.add ? getMenuItem(e.target.dataset.add) :
     e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
     e.target === confirmBtn ? modalActivate() : 
-    e.target=== paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') :''
+    e.target === paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') : ''
     renderOrder()
     orderDisplayToggle()
     renderCheckoutArea()
@@ -22,6 +22,10 @@ document.addEventListener('click', function(e){
 function orderDisplayToggle() {
     currentOrderArray.length ? orderArea.classList.remove('hidden') :
     currentOrderArray.length === 0 ? orderArea.classList.add('hidden') : ''
+}
+
+function handleConfirmBtnClick() {
+    
 }
 
 function modalActivate(){
