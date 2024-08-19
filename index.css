@@ -45,29 +45,30 @@ body {
     flex-direction: column;
     align-items: center; 
     margin: 2em 2em auto auto;
-}
 
-.menu-item {
+
+    .menu-item {
     border-bottom: solid 2px #d2d2d2;
     display: flex;
     width: 80vw;
     align-items: center;
-}
+    }
 
-
-.emoji-div {
+    .emoji-div {
     font-size: 6rem;
-    transform: translateX(-10px) translateY(-10px);
-}
-
-.ingredients {
+    transform: translate(-10px) ;
+    }
+    
+    .ingredients {
     color: #8B8B8B;
     font-weight: 100;
+    }
+
+    .btn-container {
+        margin-left: auto;
+    }
 }
 
-.btn-container {
-    margin-left: auto;
-}
 
 .add-btn {
     width: 3rem;
@@ -173,14 +174,19 @@ body {
     font-size: 1rem;
     font-weight: bold;
     margin: 15px auto;
-
 }
+
 
 .complete-order-btn:hover {
     color: #16db99;
     background-color: #ffffff;
     border: 2px solid #16db99;
     cursor: pointer;
+    box-shadow: 3px 3px #16db99;
+}
+
+.complete-order-btn:active {
+    box-shadow: inset 5px 5px #16db99;
 }
 
 /* Payment Modal */
@@ -205,8 +211,9 @@ body {
     right: 0;
     text-align: center;
     margin: auto;
-    width: 35em;
-    height: 28em;
+    width: 80%;
+    height: 45%;
+    
     background-color: #ffffff;
     box-shadow: 3px 5px 500px 1px;
     border-radius: 10px;
@@ -215,6 +222,7 @@ body {
 
     .customer-entry{
         display: flex;
+        
         flex-direction: column;
         margin: auto;
         width: 80vw;
@@ -223,38 +231,32 @@ body {
         justify-content: center;
         margin: 10px auto;
         text-align: start;
-
     }
 
     
     label {
         padding-left: .8em;
     }
-} 
-
-.customer-entry:placeholder-shown {
-        color: red;
-    }
+}
     
 .input {
     height: 50px;
     font-size: large;
     padding-left: 20px;
-    margin: 10px;
-    input-security: none;
-
-    
-
+    margin-top: 10px;
 }
 
 
 .pay-btn {
-    width: 75vw;
+    padding: 2vh 19.75vw ;
     max-width: 380px;
-    height: 50px;
+    
     color: #ffffff;
     background-color: #16db99;
     border: none;
     border-radius: 5px;
     margin-top: 5vh;
+    cursor: pointer;
+    align-items: center;
+    
 }
