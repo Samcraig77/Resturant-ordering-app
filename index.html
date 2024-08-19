@@ -42,12 +42,17 @@
             </section>
         </main>
 
-            <!-- <div class="payment-modal" id="payment-modal">
+        <div class="modal-wrapper hidden" id="modal-wrapper">
+            <div class="payment-modal" id="payment-modal">
                 <h2>Enter card details</h2>
-                <div class="customer-details">
+                <form class="customer-details">
                     <div class="customer-entry">
                         <label for="customer-name">Name</label>
-                        <input class="input" id="customer-name" placeholder="John Doe"/>
+                        <input 
+                        class="input" 
+                        id="customer-name" 
+                        autocomplete="name"
+                        placeholder="John Doe"/>
                     </div>
 
                     <div class="customer-entry">
@@ -55,27 +60,30 @@
                         <input 
                         class="input" 
                         id="card-number" 
-                        placeholder="XXXX-XXXX-XXXX-XXXX"/>
+                        type="tel"
+                        pattern="[0-9\s]{13, 19}"
+                        pattern="XXXX XXXX XXXX XXXX"
+                        placeholder="XXXX XXXX XXXX XXXX"/>
                     </div>
 
                     <div class="customer-entry">
-                        <label for="ccv-number">
-                            CCV </label>
+                        <label for="ccv-number">CCV</label>
                         <input 
                             class="input" 
-                            type="number" 
+                            type="text"
+                            inputmode="numeric" 
                             min="0" 
                             max="999" 
-                            maxlength="3" 
+                            maxlength="4" 
                             class="customer-entry" 
                             id="ccv-number" 
                             placeholder="123"/>
                     </div>
 
-                    <button class="pay-btn" id="pay-btn">Pay</button>
-                </div>
-            </div> -->
-        
+                    <button class="pay-btn" id="pay-btn" type="submit">Pay</button>
+                </form>
+            </div>
+        </div>
         <footer class="footer" id="footer"></footer>
 
         <script type="module" src="/index.js"></script>
