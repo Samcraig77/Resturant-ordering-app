@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    margin: auto 40px auto auto;
+    margin: 2em 2em auto auto;
 }
 
 .menu-item {
@@ -128,7 +128,7 @@ body {
 
     .item-price {
             margin-left: auto;
-            transform: translateX(-20px);
+            transform: translateX(-.5em);
         }
 
     button {
@@ -185,6 +185,18 @@ body {
 
 /* Payment Modal */
 
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 1;
+}
+
 .payment-modal {
     position: fixed;
     top: 0;
@@ -193,12 +205,12 @@ body {
     right: 0;
     text-align: center;
     margin: auto;
-    width: 90vw;
-    height: 45vh;
+    width: 35em;
+    height: 28em;
     background-color: #ffffff;
-    box-shadow: 30px 5px 500px 1px;
+    box-shadow: 3px 5px 500px 1px;
     border-radius: 10px;
-    z-index: 1;
+    z-index: 2;
     font-family: sans-serif;
 
     .customer-entry{
@@ -208,19 +220,33 @@ body {
         width: 80vw;
         height: 8vh;
         max-width: 400px;
-        /* align-items: center; */
         justify-content: center;
         margin: 10px auto;
+        text-align: start;
 
+    }
+
+    
+    label {
+        padding-left: .8em;
     }
 } 
 
+.customer-entry:placeholder-shown {
+        color: red;
+    }
+    
 .input {
-        height: 50px;
-        font-size: large;
-        padding-left: 20px;
-        margin: 10px;
+    height: 50px;
+    font-size: large;
+    padding-left: 20px;
+    margin: 10px;
+    input-security: none;
+
+    
+
 }
+
 
 .pay-btn {
     width: 75vw;
