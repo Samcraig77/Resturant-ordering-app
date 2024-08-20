@@ -210,10 +210,9 @@ body {
     left: 0;
     right: 0;
     text-align: center;
-    margin: auto;
-    width: 80%;
-    height: 45%;
-    
+    margin: auto; 
+    width: 35em;
+    height: 28em;
     background-color: #ffffff;
     box-shadow: 3px 5px 500px 1px;
     border-radius: 10px;
@@ -226,7 +225,7 @@ body {
         flex-direction: column;
         margin: auto;
         width: 80vw;
-        height: 8vh;
+        height: 5em;
         max-width: 400px;
         justify-content: center;
         margin: 10px auto;
