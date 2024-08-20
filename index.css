@@ -204,7 +204,7 @@ body {
     left: 0;
     right: 0;
     text-align: center;
-    margin: auto;
+    margin: auto; 
     width: 35em;
     height: 28em;
     background-color: #ffffff;
@@ -218,7 +218,7 @@ body {
         flex-direction: column;
         margin: auto;
         width: 80vw;
-        height: 8vh;
+        height: 5em;
         max-width: 400px;
         justify-content: center;
         margin: 10px auto;

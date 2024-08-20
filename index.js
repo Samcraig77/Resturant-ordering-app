@@ -6,14 +6,17 @@ const orderItems = document.getElementById('current-order')
 const orderTotalArea = document.getElementById('order-total-area')
 const confirmBtn = document.getElementById('complete-order-btn')
 const paymentModalWrapper = document.getElementById('modal-wrapper')
+const payBtn = document.getElementById('pay-btn')
 
 let currentOrderArray = []
 
 document.addEventListener('click', function(e){
     e.target.dataset.add ? getMenuItem(e.target.dataset.add) :
     e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
-    e.target === confirmBtn ? modalActivate() : 
-    e.target=== paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') :''
+    e.target === confirmBtn ? paymentModalWrapper.classList.remove('hidden') : 
+    e.target === paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') :
+    e.target === payBtn ? thankYouDisplay() && SubmitEvent.preventDefault() : ''
+     
     renderOrder()
     orderDisplayToggle()
     renderCheckoutArea()
@@ -24,8 +27,10 @@ function orderDisplayToggle() {
     currentOrderArray.length === 0 ? orderArea.classList.add('hidden') : ''
 }
 
-function modalActivate(){
-    paymentModalWrapper.classList.remove('hidden') 
+function thankYouDisplay(){
+    const customerName = document.getElementById('customer-name').value
+
+    orderTotalArea.innerText = `Thanks for your order ${customerName}`
 }
 
 // Take order array and display it
@@ -107,8 +112,7 @@ function getMenu() {
             <div class="btn-container">
                 <button class="add-btn" data-add="${item.id}">+</button>
             </div>
-        </li>
-        `
+        </li>`
     })
     return menu
 }

@@ -49,21 +49,23 @@
                     <div class="customer-entry">
                         <label for="customer-name">Name</label>
                         <input 
-                        class="input" 
-                        id="customer-name" 
-                        autocomplete="name"
-                        placeholder="John Doe"/>
+                            class="input" 
+                            id="customer-name" 
+                            autocomplete="name"
+                            placeholder="John Doe"
+                            required/>
                     </div>
 
                     <div class="customer-entry">
                         <label for="card-number">Card Number</label>
                         <input 
-                        class="input" 
-                        id="card-number" 
-                        type="tel"
-                        pattern="[0-9\s]{13, 19}"
-                        pattern="XXXX XXXX XXXX XXXX"
-                        placeholder="XXXX XXXX XXXX XXXX"/>
+                            class="input" 
+                            id="card-number" 
+                            type=""
+                            minlength="13"
+                            maxlength="19"
+                            placeholder="XXXX XXXX XXXX XXXX"
+                            required/>
                     </div>
 
                     <div class="customer-entry">
@@ -73,11 +75,12 @@
                             type="text"
                             inputmode="numeric" 
                             min="0" 
-                            max="999" 
+                            max="9999" 
                             maxlength="4" 
                             class="customer-entry" 
                             id="ccv-number" 
-                            placeholder="123"/>
+                            placeholder="123"
+                            required/>
                     </div>
 
                     <button class="pay-btn" id="pay-btn" type="submit">Pay</button>
