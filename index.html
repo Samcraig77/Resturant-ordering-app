@@ -43,9 +43,11 @@
         </main>
 
         <div class="modal-wrapper hidden" id="modal-wrapper">
+
+            <!-- All labels were added for accessability purposes -->
             <div class="payment-modal" id="payment-modal">
                 <h2>Enter card details</h2>
-                <form class="customer-details">
+                <form class="customer-details" id="customer-details">
                     <div class="customer-entry">
                         <label for="customer-name">Name</label>
                         <input 
@@ -61,7 +63,7 @@
                         <input 
                             class="input" 
                             id="card-number" 
-                            type=""
+                            type="text"
                             minlength="13"
                             maxlength="19"
                             placeholder="XXXX XXXX XXXX XXXX"
@@ -79,7 +81,7 @@
                             maxlength="4" 
                             class="customer-entry" 
                             id="ccv-number" 
-                            placeholder="123"
+                            placeholder="123 or 1234"
                             required/>
                     </div>
 
