@@ -1,3 +1,5 @@
+
+
 body {
     margin: 0;
     background-color: #ffffff;
@@ -6,7 +8,6 @@ body {
 
 /* Header  */
 .header {
-    display: flex;
     background-image: url("./burger.jpg");
     background-size: 100%;
     background-position: absolute;
@@ -14,15 +15,10 @@ body {
     background-repeat: no-repeat;
     align-items: center;
     padding: 2rem;
-    margin: auto;
     color: #ffffff;
     
     h1 {
     font-size: 3rem;
-    }
-
-    h1, h2 {
-    padding-left: 10vw;
     }
 
     h2 {
@@ -35,6 +31,7 @@ body {
 
     hgroup {
         line-height: 1.3rem;
+        padding-left: 10vw;
     }
 }
 
@@ -52,57 +49,75 @@ body {
     display: flex;
     width: 80vw;
     align-items: center;
-    }
-
-    .emoji-div {
-    font-size: 6rem;
-    transform: translate(-10px) ;
-    }
+    line-height: 10px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     
-    .ingredients {
-    color: #8B8B8B;
-    font-weight: 100;
+
+        .emoji-div {
+        font-size: 6rem;
+        transform: translate(-10px) ;
+        }
+        
+        .ingredients {
+        color: #8B8B8B;
+        font-weight: 100;
+        }
+
+        .btn-container {
+            margin-left: auto;
+        
+    
+                .add-btn {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                border: 2px solid #dedede;
+                background-color: inherit;
+                font-size: 1.5rem;
+            }
+            .add-btn:hover {
+                box-shadow: 1px 1px black;
+                cursor: pointer;
+            }
+            .add-btn:active {
+                box-shadow: inset 1px 1px black;
+            }
+    
+        }
+    
     }
-
-    .btn-container {
-        margin-left: auto;
-    }
 }
 
 
-.add-btn {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    border: 2px solid #dedede;
-    background-color: inherit;
-    font-size: 1.5rem;
-}
 
-.add-btn:hover {
-    box-shadow: 1px 1px black;
-    cursor: pointer;
-}
 
-.add-btn:active {
-    box-shadow: inset 1px 1px black;
-}
+
+
 
 /* Order Area */
 
 .order-area{
     width: 80vw;
     margin: auto;
-    padding: 0;
+    
+    
+    .ty-message {
+        display: flex;
+        align-items: center;
+        justify-content: center ;
+        margin-top: 5vh;
+        width: 80vw;
+        height: 10vh;
+        background-color: #ECFDF5;
+        color: #065F46;
+        
+    }
 }
 
 .order-area .order-heading{
     text-align: center;
     padding-top: 15px;
-}
-
-.hidden {
-   display: none;
 }
 
 .current-order {
@@ -116,20 +131,21 @@ body {
 .order-item {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 80vw;
     height: 5vh;
     margin-bottom: 1vh;
-    font-size: 2rem;
+    font-size: 1.7rem;
 
     .item-description {
         margin-left: -20px;
-        
+        font-weight: 100;
     }
 
     .item-price {
             margin-left: auto;
-            transform: translateX(-.5em);
+            transform: translateX(-20px);
+            font-weight: 100;
+            font-size: 1.4rem;
         }
 
     button {
@@ -145,8 +161,6 @@ body {
             text-decoration: underline red;
             cursor: pointer;
     }
-    
-    
 }
 
 
@@ -156,10 +170,12 @@ body {
     display: flex;
     align-items: center;
     margin: auto;
-    padding: 0;
     border-top: 2px solid black;
+    font-weight: 100;
+    font-size: 1.7rem;
+
     .align-right{
-        font-size: 2.25rem;
+        font-size: 1.4rem;
         margin-left: auto;
     }
 }
@@ -186,7 +202,7 @@ body {
 }
 
 .complete-order-btn:active {
-    box-shadow: inset 5px 5px #16db99;
+    box-shadow: none
 }
 
 /* Payment Modal */
@@ -201,61 +217,69 @@ body {
     height: 100vh;
     background-color: transparent;
     z-index: 1;
-}
 
-.payment-modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    margin: auto; 
-    width: 35em;
-    height: 28em;
-    background-color: #ffffff;
-    box-shadow: 3px 5px 500px 1px;
-    border-radius: 10px;
-    z-index: 2;
-    font-family: sans-serif;
 
-    .customer-entry{
-        display: flex;
+    .payment-modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto; 
+        width: 45%;
+        min-width: 450px;
+        height: 50%; 
+        min-height: 500px;
+        background-color: #ffffff;
+        box-shadow: 3px 5px 50px 10px;
+        border-radius: 10px;
+        z-index: 2;
+        font-family: sans-serif;
+        overflow: auto;
+
+        .customer-entry{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 82%;
+            height: 25%;
+            justify-content: center;
+            margin: 5% auto;
+            text-align: start;
+        }
+
         
-        flex-direction: column;
-        margin: auto;
-        width: 80vw;
-        height: 5em;
-        max-width: 400px;
-        justify-content: center;
-        margin: 10px auto;
-        text-align: start;
+        label {
+            padding-left: .8em;
+        }
+
+        
+        .input {
+            height: 50px;
+            font-size: large;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .pay-btn {
+            width: 82%;
+            height: 50px;
+            color: #ffffff;
+            background-color: #16db99;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            align-items: center;
+        }
+
     }
-
-    
-    label {
-        padding-left: .8em;
-    }
 }
-    
-.input {
-    height: 50px;
-    font-size: large;
-    padding-left: 20px;
-    margin-top: 10px;
+/* Misc classes used to reveal elements with JS */
+
+.hidden {
+    display: none;
 }
 
-
-.pay-btn {
-    padding: 2vh 19.75vw ;
-    max-width: 380px;
-    
-    color: #ffffff;
-    background-color: #16db99;
-    border: none;
-    border-radius: 5px;
-    margin-top: 5vh;
-    cursor: pointer;
-    align-items: center;
-    
-}
+/* This is my first time experimenting with nested CSS. Is it too much? Do you prefer nested or un-nested CSS? */
