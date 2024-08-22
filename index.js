@@ -7,6 +7,7 @@ const orderTotalArea = document.getElementById('order-total-area')
 const confirmBtn = document.getElementById('complete-order-btn')
 const paymentModalWrapper = document.getElementById('modal-wrapper')
 const payBtn = document.getElementById('pay-btn')
+const customerDetailsForm = document.getElementById('customer-details')
 
 let currentOrderArray = []
 
@@ -15,7 +16,9 @@ document.addEventListener('click', function(e){
     e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
     e.target === confirmBtn ? paymentModalWrapper.classList.remove('hidden') : 
     e.target === paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') :
-    e.target === payBtn ? thankYouDisplay() && SubmitEvent.preventDefault() : ''
+    e.target === payBtn ? customerDetailsForm.checkValidity() && thankYouDisplay() & e.preventDefault() : '' 
+    
+    //End of event chain
      
     renderOrder()
     orderDisplayToggle()
@@ -29,8 +32,8 @@ function orderDisplayToggle() {
 
 function thankYouDisplay(){
     const customerName = document.getElementById('customer-name').value
-
-    orderTotalArea.innerText = `Thanks for your order ${customerName}`
+    paymentModalWrapper.classList.add('hidden')
+    orderArea.innerHTML = `<h2 class="ty-message">Thanks, ${customerName}! Your order is on its way!</h2>`
 }
 
 // Take order array and display it
@@ -88,8 +91,8 @@ function getOrderTotal() {
 // Render order total
 function renderCheckoutArea(){
     orderTotalArea.innerHTML = `
-        <h2 class="order-total">Total Price + Tax:</h2>
-        <h3 class="align-right">$${getOrderTotal()}</h3>
+        <p class="order-total">Total Price + Tax:</p>
+        <p class="align-right">$${getOrderTotal()}</p>
     `
 }
 
