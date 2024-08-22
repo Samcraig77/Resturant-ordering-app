@@ -14,7 +14,7 @@ body {
     background-position-y: 72%;
     background-repeat: no-repeat;
     align-items: center;
-    padding: 2rem;
+    padding: .5vh 0;
     color: #ffffff;
     
     h1 {
@@ -49,9 +49,9 @@ body {
     display: flex;
     width: 80vw;
     align-items: center;
-    line-height: 10px;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    line-height: 8px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     
 
         .emoji-div {
