@@ -8,36 +8,47 @@ const confirmBtn = document.getElementById('complete-order-btn')
 const paymentModalWrapper = document.getElementById('modal-wrapper')
 const payBtn = document.getElementById('pay-btn')
 const customerDetailsForm = document.getElementById('customer-details')
+const tyMessage = document.getElementById('ty-message')
 
 let currentOrderArray = []
 
 document.addEventListener('click', function(e){
-    e.target.dataset.add ? getMenuItem(e.target.dataset.add) :
+    e.target.dataset.add ? getMenuItem(e.target.dataset.add) & tyMessage.classList.add('hidden') :
     e.target.dataset.remove ? currentOrderArray = removeItem(e.target.dataset.remove) :
     e.target === confirmBtn ? paymentModalWrapper.classList.remove('hidden') : 
     e.target === paymentModalWrapper ? paymentModalWrapper.classList.add('hidden') :
-    e.target === payBtn ? customerDetailsForm.checkValidity() && thankYouDisplay() & e.preventDefault() : '' 
+    e.target === payBtn ? customerDetailsForm.checkValidity() && thankYouDisplay() & e.preventDefault() & resetCustomer() : '' 
     
-    //End of event chain
+    //End of event listener chain
      
     renderOrder()
     orderDisplayToggle()
     renderCheckoutArea()
 })
 
+// Displays current order if currentOrderArray.length isn't falsy
 function orderDisplayToggle() {
     currentOrderArray.length ? orderArea.classList.remove('hidden') :
-    currentOrderArray.length === 0 ? orderArea.classList.add('hidden') : ''
+    !currentOrderArray.length ? orderArea.classList.add('hidden') : ''
 }
 
+// Submits customer information and order then displays message
 function thankYouDisplay(){
     const customerName = document.getElementById('customer-name').value
     paymentModalWrapper.classList.add('hidden')
-    orderArea.innerHTML = `<h2 class="ty-message">Thanks, ${customerName}! Your order is on its way!</h2>`
+    tyMessage.classList.remove('hidden')
+    tyMessage.innerHTML = `<h2> Thanks, ${customerName}! Your order is on its way! </h2>`
+}
+
+// Resets currentOrderArray and customer details for new order
+function resetCustomer() {
+    customerDetailsForm.reset()
+    currentOrderArray = []
 }
 
 // Take order array and display it
 function renderOrder(){
+   
     orderItems.innerHTML = getOrder()
 }
 
@@ -68,6 +79,8 @@ function addMenuItem(item){
 function getMenuItem(itemId) {
     const selectedItem = menuArray[Number(itemId)]
     addMenuItem({selectedItem})
+
+
 }
 
 
