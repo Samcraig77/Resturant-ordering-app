@@ -101,24 +101,14 @@ body {
     width: 80vw;
     margin: auto;
     
-    
-    .ty-message {
-        display: flex;
-        align-items: center;
-        justify-content: center ;
-        margin-top: 5vh;
-        width: 80vw;
-        height: 10vh;
-        background-color: #ECFDF5;
-        color: #065F46;
-        
-    }
-}
-
-.order-area .order-heading{
+    .order-heading{
     text-align: center;
     padding-top: 15px;
 }
+    
+}
+
+ 
 
 .current-order {
     display: flex;
@@ -203,6 +193,20 @@ body {
 
 .complete-order-btn:active {
     box-shadow: none
+}
+
+/* TY message */
+
+.ty-message {
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    margin: 5vh auto;
+    width: 80vw;
+    height: 10vh;
+    background-color: #ECFDF5;
+    color: #065F46;
+        
 }
 
 /* Payment Modal */
