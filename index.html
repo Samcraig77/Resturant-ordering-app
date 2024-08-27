@@ -22,22 +22,22 @@
         <main>
 
             <section>
-                <ul class="menu" id="menu" aria-label="menu items">
+                <ul class="menu" id="menu" aria-label="Menu items">
                     <!-- Menu Items render here -->
                 </ul>
             </section>
 
             <section class="order-area hidden" id="order-area">
-                <h2 class="order-heading" id="order-heading">Your Order</h2>
-                <ul class="current-order" id="current-order" aria-label="current order">
+                <h2 class="order-heading">Your Order</h2>
+                <ul class="current-order" id="current-order" aria-label="Current order">
                     <!-- Order Items render here -->
                 </ul>
 
-                <div class="order-total-area" id="order-total-area" aria-label="order finalization">
+                <div class="order-total-area" id="order-total-area" aria-label="Order finalization">
                     <!-- Order Total renders here -->
                 </div>
 
-                <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
+                <button class="complete-order-btn" id="complete-order-btn" aria-label="Complete order">Complete Order</button>
                 
             </section>
 
@@ -55,8 +55,8 @@
                     <div class="customer-entry">
                         <label for="customer-name">Name</label>
                         <input 
+                            id="customer-name"
                             class="input" 
-                            id="customer-name" 
                             autocomplete="name"
                             placeholder="John Doe"
                             required/>
@@ -65,11 +65,11 @@
                     <div class="customer-entry">
                         <label for="card-number">Card Number</label>
                         <input 
+                            id="card-number"
                             class="input" 
-                            id="card-number" 
                             type="text"
-                            minlength="13"
-                            maxlength="19"
+                            minlength="16"
+                            maxlength="16"
                             placeholder="XXXX XXXX XXXX XXXX"
                             required/>
                     </div>
@@ -77,15 +77,17 @@
                     <div class="customer-entry">
                         <label for="ccv-number">CCV</label>
                         <input 
+                            id="ccv-number" 
                             class="input" 
                             type="text"
                             inputmode="numeric" 
                             min="0" 
                             max="9999" 
-                            maxlength="4" 
+                            minlength="3"
+                            maxlength="3" 
                             class="customer-entry" 
-                            id="ccv-number" 
-                            placeholder="123 or 1234"
+                            
+                            placeholder="123"
                             required/>
                     </div>
 
