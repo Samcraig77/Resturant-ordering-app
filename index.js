@@ -1,4 +1,4 @@
-import { menuArray } from "./data.js"
+import { menuArray, cyberPunkMenu } from "./data.js"
 
 const menuArea = document.getElementById('menu')
 const orderArea = document.getElementById('order-area')
@@ -112,12 +112,12 @@ function renderCheckoutArea(){
 // Retrieve menuArray items from data.js
 function getMenu() {
     let menu = ''
-    menuArray.forEach(item => {
+    cyberPunkMenu.forEach(item => {
         menu += `
         <li class="menu-item" id="${item.name}">
 
             <div class="emoji-div" aria-hidden="true"> 
-                ${item.emoji} 
+                ${item.image} 
             </div>
 
             <div class="item-info">
