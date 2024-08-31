@@ -28,8 +28,7 @@ document.addEventListener('click', function(e){
 
 // Displays current order if currentOrderArray.length isn't falsy
 function orderDisplayToggle() {
-    currentOrderArray.length ? orderArea.classList.remove('hidden') :
-    !currentOrderArray.length ? orderArea.classList.add('hidden') : ''
+    currentOrderArray.length ? orderArea.classList.remove('hidden') : orderArea.classList.add('hidden')
 }
 
 // Submits customer information and order then displays message
@@ -77,7 +76,7 @@ function addMenuItem(item){
 
 // Add object from menu to order
 function getMenuItem(itemId) {
-    const selectedItem = menuArray[Number(itemId)]
+    const selectedItem = cyberPunkMenu[Number(itemId)]
     addMenuItem({selectedItem})
 
 
@@ -117,7 +116,7 @@ function getMenu() {
         <li class="menu-item" id="${item.name}">
 
             <div class="emoji-div" aria-hidden="true"> 
-                ${item.image} 
+                <img src="${item.image}">
             </div>
 
             <div class="item-info">

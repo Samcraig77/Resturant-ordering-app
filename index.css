@@ -1,25 +1,30 @@
-
+:root {
+    --background-color: #02010B;
+    --heading-text: #ffe1ea;
+    
+}
 
 body {
     margin: 0;
-    background-color: #ffffff;
-    font-family: 'smythe', sans-serif;
+    background-color: var(--background-color);
+    font-family: "Orbitron", sans-serif;
+    color: #001514
 } 
 
 /* Header  */
 .header {
-    background-image: url("./cyber-punk-theme/asian-comfort-food-at.jpg");
+    background-image: url("./cyber-punk-theme/cp-foodtruck.avif");
     background-size: 100%;
     background-position: absolute;
     background-position-y: 72%;
     background-repeat: no-repeat;
     align-items: center;
     padding: .5vh 0;
-    color: #ffffff;
+    color: var(--heading-text);
     
     h1 {
-    font-size: 3rem;
-    text-shadow:  3px #065F46;
+    font-size: 2rem;
+    text-shadow: 2px 3px #020807;
     }
 
     h2 {
@@ -28,10 +33,14 @@ body {
         1px -1px 2px #000,
         -1px 1px 2px #000, 
         1px 1px 2px #000;
+        
+        sub {
+            font-size: .8rem;;
+         }
     }
 
     hgroup {
-        line-height: 1.3rem;
+        line-height: 2rem;
         padding-left: 10vw;
     }
 }
@@ -46,18 +55,24 @@ body {
 
 
     .menu-item {
-    border-bottom: solid 2px #d2d2d2;
+    border-bottom: solid 2px #e952de;
+    box-shadow: 0px 3px 11px #ffa0fd;
+    text-shadow: 0px 0px 6px #ffa0fd;
     display: flex;
     width: 80vw;
     align-items: center;
     line-height: 15px;
     padding-top: 1vh;
     padding-bottom: 1vh;
+    margin-bottom: 10px;
     
 
-        .emoji-div {
-        font-size: 6rem;
-        transform: translate(-10px) ;
+        img {
+        width: 9rem;
+        }
+
+        .item-info {
+            margin-left: 10px;
         }
         
         .ingredients {
@@ -67,15 +82,18 @@ body {
 
         .btn-container {
             margin-left: auto;
-        
+            padding-right: 5px;
+            
     
                 .add-btn {
                 width: 3rem;
                 height: 3rem;
                 border-radius: 50%;
-                border: 2px solid #dedede;
+                border: 2px solid #ffe1ea;
                 background-color: inherit;
                 font-size: 1.5rem;
+                text-shadow: 0px 0px 3px #e952de,
+                0px 0px 8px #e952de;
             }
             .add-btn:hover {
                 box-shadow: 1px 1px black;
@@ -125,7 +143,8 @@ body {
     width: 80vw;
     height: 5vh;
     margin-bottom: 1vh;
-    font-size: 1.7rem;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px #ffa0fd;
 
     .item-description {
         margin-left: -20px;
@@ -140,12 +159,12 @@ body {
         }
 
     button {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: .75rem;
         color:#8B8B8B;
         border: none;
-        background-color: #ffffff;
-        margin-left: 1vw;
+        background-color: inherit;
+        margin: .5vw;
     }
 
     button:hover{
@@ -280,6 +299,7 @@ body {
 
     }
 }
+
 /* Misc classes used to reveal elements with JS */
 
 .hidden {
