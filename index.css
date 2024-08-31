@@ -186,7 +186,7 @@ body {
     font-size: 1.7rem;
     text-shadow: 0px 0px 4px #e952de,
     1px 1px 5px #e952de,
-    -1px -1px 6px #ffa0fd;
+    -1px -1px 6px #ecf009;
 
     .align-right{
         font-size: 1.4rem;
@@ -199,20 +199,23 @@ body {
     width: 80vw;
     border-radius: 5px;
     border: none;
-    background-color: #16db99;
-    color: #ffffff;
+    background-color: #ff2929c9;
+    color: #ffee8d;
+    box-shadow: 0px 0px 30px red;
+    text-shadow: 0px 0px 10px yellow;
     font-size: 1rem;
     font-weight: bold;
+    font-family: inherit;
     margin: 15px auto;
 }
 
 
 .complete-order-btn:hover {
-    color: #16db99;
-    background-color: #ffffff;
-    border: 2px solid #16db99;
+    color: red;
+    background-color: #ffee8d;
+    border: 2px solid red;
     cursor: pointer;
-    box-shadow: 3px 3px #16db99;
+    box-shadow: 0px 0px 30px #ecf009;
 }
 
 .complete-order-btn:active {
@@ -264,6 +267,9 @@ body {
         z-index: 2;
         font-family: sans-serif;
         overflow: auto;
+        color: #e952de;
+        text-shadow: 0px 0px 3px #ffa0fd;
+
 
         .customer-entry{
             display: flex;
@@ -292,8 +298,11 @@ body {
         .pay-btn {
             width: 82%;
             height: 50px;
-            color: #ffffff;
-            background-color: #16db99;
+            color: #ecf009;
+            background-color: red;
+            font-weight: bolder;
+            font-size: larger;
+            text-shadow: 1px 1px 3px #ECFDF5;
             border: none;
             border-radius: 5px;
             margin-top: 10px;

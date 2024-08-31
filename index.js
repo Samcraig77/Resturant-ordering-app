@@ -60,7 +60,7 @@ function getOrder(){
         <li class="order-item">
             <h3 class="item-description">${item.selectedItem.name}</h3>
             <button class="remove-btn" data-remove="${item.uuid}">remove</button>
-            <h3 class="item-price">$${item.selectedItem.price}</h3>
+            <h3 class="item-price">$$${item.selectedItem.price}</h3>
         </li>
         `
     })
@@ -104,7 +104,7 @@ function getOrderTotal() {
 function renderCheckoutArea(){
     orderTotalArea.innerHTML = `
         <p class="order-total">Total Price + Tax:</p>
-        <p class="align-right">$${getOrderTotal()}</p>
+        <p class="align-right">$$${getOrderTotal()}</p>
     `
 }
 
@@ -123,7 +123,7 @@ function getMenu() {
                 <hgroup>
                     <h3 class="item-name"> ${item.name} </h3>
                     <p class="ingredients"> ${item.ingredients.join(', ')} </p>
-                    <h3> $${item.price} + Tax</h3>
+                    <h3> $$${item.price} + Tax</h3>
                 </hgroup>
             </div>
 
